@@ -21,6 +21,7 @@ public class NoteController {
 
     @GetMapping
     public List<Note> getAllNote(){
+        System.out.println("Retrieving all notes from DB.");
         return noteRepository.findAll();
     }
 
