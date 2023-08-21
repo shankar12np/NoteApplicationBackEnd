@@ -27,6 +27,7 @@ public class NoteController {
     @PostMapping
     public ResponseEntity<String> createNote(@RequestBody Note note){
         System.out.println("Added system out println");
+        System.out.println("Added by Shankhar");
         this.noteRepository.save(note);
         return ResponseEntity.ok("Note Created");
     }
