@@ -20,13 +20,13 @@ public class NoteController {
     NoteRepository noteRepository;
 
     @GetMapping
-    public List<Note> getAllNote(){
+    public List<Note> getAllNote() {
         System.out.println("Retrieving all notes from DB.");
         return noteRepository.findAll();
     }
 
     @PostMapping
-    public ResponseEntity<String> createNote(@RequestBody Note note){
+    public ResponseEntity<String> createNote(@RequestBody Note note) {
         System.out.println("Added system out println");
         System.out.println("Added by Shankhar");
         this.noteRepository.save(note);
@@ -51,15 +51,15 @@ public class NoteController {
                 .orElseThrow(() -> new ResourceNotFoundException("Note", "id", noteId));
 
         note.setTitle(noteDetails.getTitle());
-        note.setContent(noteDetails.getContent()); // Corrected typo here
+        note.setContent(noteDetails.getContent());
 
-        Note updatedNote = noteRepository.save(note); // Added closing parenthesis
+        Note updatedNote = noteRepository.save(note);
 
         return updatedNote;
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteNote(@PathVariable(value = "id") Long noteId){
+    public ResponseEntity<?> deleteNote(@PathVariable(value = "id") Long noteId) {
         Note note = noteRepository.findById(noteId)
                 .orElseThrow(() -> new ResourceNotFoundException("Note", "id", noteId));
         noteRepository.delete(note);
@@ -67,5 +67,5 @@ public class NoteController {
     }
 
 
-
 }
+
