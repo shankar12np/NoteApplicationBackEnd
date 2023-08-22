@@ -47,6 +47,7 @@ public class Note implements Serializable {
 
     // Add a method to update the updatedAt field before each update operation
     // Test comment
+    // Kamal test comment
     @PreUpdate
     public void preUpdate() {
         this.updatedAt = new Date();
