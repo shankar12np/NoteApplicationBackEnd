@@ -14,6 +14,7 @@ public class ResourceNotFoundException extends RuntimeException{
         super(String.format("%s not found with %s: '%s",resourceName,fieldName,fieldValue));
         System.out.println("ResourceNotFound class constructor called");
         System.out.println("Change made by Kamal");
+        System.out.println("Userprofile added....");
         this.resourceName = resourceName;
         this.fieldName = fieldName;
         this.fieldValue = fieldValue;
