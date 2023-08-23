@@ -21,6 +21,7 @@ public class NoteController {
 
     @GetMapping
     public List<Note> getAllNote() {
+        System.out.println("Getting list of note for database");
         return noteRepository.findAll();
     }
 
@@ -28,6 +29,7 @@ public class NoteController {
     public ResponseEntity<String> createNote(@RequestBody Note note) {
         System.out.println("Added system out println");
         System.out.println("Added by Shankhar");
+        System.out.println("User profile notes");
         this.noteRepository.save(note);
         return ResponseEntity.ok("Note Created");
     }
