@@ -15,6 +15,7 @@ public class ResourceNotFoundException extends RuntimeException{
         System.out.println("ResourceNotFound class constructor called");
         System.out.println("Change made by Kamal");
         System.out.println("Userprofile added....");
+        System.out.println("Timeline not found!");
         this.resourceName = resourceName;
         this.fieldName = fieldName;
         this.fieldValue = fieldValue;
